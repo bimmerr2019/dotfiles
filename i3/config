@@ -260,12 +260,12 @@ client.placeholder 	#000000 #0c0c0c $white2 #000000 0c0c0c
 
 for_window [class="URxvt*"] border pixel 1
 
-# Terminal scratchpad with tmux and three windows: 1. Terminal | 2.Neovim temp file
+# Terminal scratchpad with tmux and two windows: 1.Terminal | 2.Neovim temp file
 for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
 exec urxvtc -name urxvt_scratchpad \
--e tmux -2 new-session -d -s scratchpad \; \
-new-window -n nvim 'nvim +e /tmp/nvim-tmp.md' \; \
+-e tmux new-session -d -s scratchpad \; \
+new-window -n vim 'nvim +e /tmp/nvim-tmp.md' \; \
 attach-session -d -t scratchpad
 
 # htop scratchpad
