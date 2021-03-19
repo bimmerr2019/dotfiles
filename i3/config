@@ -276,6 +276,8 @@ exec urxvtc -name htop_scratchpad -e htop
 # i3bar
 bar {
     status_command i3status --config ~/.config/i3/i3status.conf
+
+font pango:Inconsolata NF 14
     
     # Disable all tray icons
     tray_output none
