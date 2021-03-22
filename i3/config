@@ -81,6 +81,13 @@ bindsym $mod+CTRL+h split h
 # split in vertical orientation
 bindsym $mod+CTRL+v split v
 
+#change gaps
+bindsym $mod+r gaps inner current plus 5
+bindsym $mod+Shift+r gaps inner current minus 5
+
+bindsym $mod+z gaps outer current plus 5
+bindsym $mod+Shift+z gaps outer current minus 5
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -138,6 +145,13 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+#on the fly resize (no more resize mode)
+bindsym $mod+Shift+y resize shrink width 10 px or 10 ppt
+bindsym $mod+Shift+u resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+i resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
+
+
 workspace_auto_back_and_forth yes
 
 assign [class="firefox" instance="Navigator"] $web
@@ -151,7 +165,7 @@ bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+#bindsym $mod+Shift+r restart
 
 # shutdown / restart / suspend...
 
@@ -178,33 +192,6 @@ for_window [window_role="task_dialog"] floating enable
 
 # Example of defining a floating window
 for_window [class="Arandr"] floating enable
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
 
 # special
 set_from_resource $foreground foreground #C6C6C6
@@ -245,11 +232,12 @@ set_from_resource $white1 color7 #4E4E4E
 set_from_resource $white2 color15 #ffffff
 
 ##########
-# DESIGN #
 ##########
 
 # hide borders
 hide_edge_borders both
+gaps inner 15
+gaps outer 15
 
 # class border backgr. text indicator child_border 
 client.focused 		#333333 $black2 $white2 #285577
@@ -273,30 +261,14 @@ for_window [instance="htop_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
 exec urxvtc -name htop_scratchpad -e htop
 
-# i3bar
 bar {
-    status_command i3status --config ~/.config/i3/i3status.conf
-
-font pango:Inconsolata NF 14
-    
-    # Disable all tray icons
-    tray_output none
-
-    # tray_output primary
-    colors {
-        background $black2
-        statusline $white2
-        separator $white2
-
-        # border background text
-        focused_workspace 	$background $background $red1
-        active_workspace 	$black2 $black1 $white2
-        inactive_workspace 	$black1 $black2 $foreground
-        urgent_workspace 	$red1 $red1 $white2
-        binding_mode 		$background $red2 $white2
-    }
+	status_command /usr/bin/bumblebee-status \
+        -m battery pasink pasource nic disk memory datetime \
+		-p disk.path=/home datetime.format="%a, %b %d, %Y at %I:%M %p" \
+		-t solarized-powerline
+#        position top
+        font pango:Inconsolata NF 14
 }
-
 set $mode_display Config monitor resolution - Default config (d)
 
 mode "$mode_display" {
@@ -311,4 +283,4 @@ bindsym $mod+x mode "$mode_display"
 exec --no-startup-id dunst
 
 # Remap Caps Lock key when external keyboard is plugged
-bindsym $mod+z exec "setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape' &"
+# bindsym $mod+z exec "setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape' &"

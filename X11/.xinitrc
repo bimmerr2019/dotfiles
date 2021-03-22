@@ -10,4 +10,5 @@ amixer -c 0 -- sset Speaker playback 40dB
 amixer -c 0 -- sset Headphone playback 40dB
 udiskie &
 setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape' &
+xset r rate 300 50
 exec i3
