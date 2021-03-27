@@ -110,10 +110,10 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $terms "1: terms"
+set $terms "1:mutt"
 set $web "2: web"
-set $ws3 "3"
-set $ws4 "4"
+set $ws3 "3: msg"
+set $ws4 "4: terms"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -154,7 +154,10 @@ bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
 
 workspace_auto_back_and_forth yes
 
-assign [class="firefox" instance="Navigator"] $web
+assign [class="firefox" instance="Navigator"] $terms
+assign [class="KeePassXC" instance="keepassxc"] $web
+assign [class="Element" instance="element"] $ws3
+assign [class="Signal" instance="signal"] $ws3
 
 focus_follows_mouse no
 
@@ -184,6 +187,7 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 
+exec --no-startup-id sh "$HOME/.config/i3/scripts/random_wall2.sh"
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/wallpaper.jpg
 
 # floating pop up automatically

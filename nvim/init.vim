@@ -54,3 +54,11 @@ augroup END
 
 " Config for fzf.vim (BONUS :D)
 nnoremap <leader>f :Files<cr>
+
+" added for mutt and text_flowed
+setl tw=72
+setl fo=watqc
+setl nojs
+setl nosmartindent
+setl list
+"set listchars=trail:*
