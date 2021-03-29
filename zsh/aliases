@@ -1,4 +1,5 @@
 alias ll='ls -lah'
+alias cfm='nvim $HOME/.config/mutt/muttrc_local'
 alias lf='ranger'
 alias ga='git add'
 alias gc='git commit'

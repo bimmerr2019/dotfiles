@@ -1,0 +1,11 @@
+# common mutt definitions for all mailboxes
+#
+set editor = "nvim -c 'startinsert'"
+set date_format="%m/%d/%y %I:%M%p"
+set confirmappend = no
+set delete = yes
+set signature=~/.config/mutt/signature.txt
+set text_flowed = yes
+
+macro index,pager A ";<save-message>=Archive\n" "move to Archive"
+macro index,pager d ";<save-message>=Trash<enter>" "move to Trash"
