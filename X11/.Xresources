@@ -28,6 +28,7 @@
 *.color15: #ffffff
 
 URxvt*font: xft:Inconsolata Nerd Font Mono:style=Medium:size=18:pixelsize=20:antialias=true
+!URxvt*font: xft:MesloLGS NF:size=11
 URxvt*borderLess: false
 URxvt*externalBorder: 0
 URxvt*internalBorder: 4

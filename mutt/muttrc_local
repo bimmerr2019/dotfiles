@@ -7,5 +7,5 @@ set delete = yes
 set signature=~/.config/mutt/signature.txt
 set text_flowed = yes
 
-macro index,pager A ";<save-message>=Archive\n" "move to Archive"
+macro index,pager A ";<save-message>=2021\n" "move to Archive"
 macro index,pager d ";<save-message>=Trash<enter>" "move to Trash"
