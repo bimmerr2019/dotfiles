@@ -8,11 +8,29 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 call plug#end()
 
 set clipboard+=unnamedplus
+set splitbelow splitright
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+"Remap splits navigation to just CTRL-hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" reminder: leader is "\" so \tt gives a new terminal
+map <Leader>tt :vnew term://zsh<CR>
+map <Leader>pv :set nosplitright<bar> :vsp<bar> :Ex<bar> :vertical resize 30<bar> :set splitright<CR>
+
+" Change 2 split windows from vert to horiz or horiz to vert 
+map <Leader>th <C-w>t<C-w>H 
+map <Leader>tk <C-w>t<C-w>K 
+
+" Removes pipes | that act as seperators on splits 
+set fillchars+=vert:\
 
 set noswapfile
 
@@ -34,6 +52,9 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set hidden
+set wildmenu
+set path +=**
 
 " Show substitution
 set inccommand=nosplit
