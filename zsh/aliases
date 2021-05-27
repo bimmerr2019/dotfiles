@@ -1,5 +1,65 @@
-alias ll='ls -lah'
+#
+# # ex - archive extractor
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+alias cat="bat"
+alias ll='lsd -lah'
+alias l='lsd -lFh'     #size,show type,human readable
+alias la='lsd -lAFh'   #long list,show almost all,show type,human readable
+alias lr='lsd -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='lsd -ltFh'   #long list,sorted by date,show type,human readable
+#alias ll='lsd -l'      #long list
+alias ldot='lsd -ld .*'
+alias lS='lsd -1FSsh'
+alias lart='lsd -1Fcart'
+alias lrt='lsd -1Fcrt'
+
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+
+alias t='tail -f'
+
+# Command line head / tail shortcuts
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
+
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
 alias cfz='nvim $HOME/dotfiles/zsh/.zshrc'
+alias cfv='nvim $HOME/dotfiles/nvim/init.vim'
 alias cfp='nvim $HOME/dotfiles/zsh/.zshrc.play'
 alias cfa='nvim $HOME/dotfiles/zsh/aliases'
 alias cfm='nvim $HOME/dotfiles/mutt/muttrc_local'
@@ -20,4 +80,5 @@ alias d='dirs -v'
 alias sparrow='cd $HOME/sparrow; ./sparrow'
 alias whirl='cd $HOME/Downloads/whirlpool-gui; yarn start'
 alias wasabi='cd $HOME/WalletWasabi/WalletWasabi.Gui; dotnet run'
+alias lv="nvim -c':e#<1'"
 for index ({1..9}) alias "$index"="cd +${index}"; unset index

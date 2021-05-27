@@ -5,10 +5,17 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'simeji/winresizer'
     Plug 'junegunn/fzf.vim'
     Plug 'simnalamburt/vim-mundo'
+    Plug 'rust-lang/rust.vim'
+    Plug 'bluz71/vim-nightfly-guicolors'
 call plug#end()
 
 set clipboard+=unnamedplus
 set splitbelow splitright
+set number relativenumber nowrap
+
+" added for rust plugin
+syntax enable
+filetype plugin indent on
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -22,12 +29,17 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " reminder: leader is "\" so \tt gives a new terminal
-map <Leader>tt :vnew term://zsh<CR>
-map <Leader>pv :set nosplitright<bar> :vsp<bar> :Ex<bar> :vertical resize 30<bar> :set splitright<CR>
+nnoremap <Leader>tt :vnew term://zsh<CR>
+nnoremap <Leader>pv :set nosplitright<bar> :vsp<bar> :Ex<bar> :vertical resize 30<bar> :set splitright<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <Leader>pf :Files<CR>
+nnoremap <Leader><CR> :so ~/dotfiles/nvim/init.vim<CR>
+nnoremap <Leader>+ :vertical resize +5<CR>
+nnoremap <Leader>- :vertical resize -5<CR>
 
 " Change 2 split windows from vert to horiz or horiz to vert 
-map <Leader>th <C-w>t<C-w>H 
-map <Leader>tk <C-w>t<C-w>K 
+nnoremap <Leader>th <C-w>t<C-w>H 
+nnoremap <Leader>tk <C-w>t<C-w>K 
 
 " Removes pipes | that act as seperators on splits 
 set fillchars+=vert:\
@@ -41,8 +53,6 @@ set undodir=$HOME/.config/nvim/undo
 " number of undo saved
 set undolevels=10000
 set undoreload=10000
-
-set number
 
 " use 4 spaces instead of tab ()
 " copy indent from current line when starting a new line
@@ -88,3 +98,11 @@ highlight DiffAdd    cterm=BOLD ctermfg=NONE ctermbg=22
 highlight DiffDelete cterm=BOLD ctermfg=NONE ctermbg=52
 highlight DiffChange cterm=BOLD ctermfg=NONE ctermbg=23
 highlight DiffText   cterm=BOLD ctermfg=NONE ctermbg=23
+"highlight IncSearch  cterm=BOLD ctermfg=NONE ctermbg=23
+
+set termguicolors | "Use the right colors
+colorscheme nightfly
+let g:lightline = { 'colorscheme' : 'nightfly'}
+let g:nightflyCursorColor = 1
+let g:nightflyUnderlineMatchParen = 1
+

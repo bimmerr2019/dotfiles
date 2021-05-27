@@ -1,76 +1,23 @@
-!the commented out colors are from mouseless
-!
-!*.foreground: #C6C6C6
-!*.background: #1C1C1C
-!*.cursorColor: #444444
-!
-!! black 236 238
-!*.color0: #303030
-!*.color8: #444444
-!! red 167
-!*.color1: #d75f5f
-!*.color9: #d75f5f
-!! green 108
-!*.color2: #87AF87
-!*.color10: #87AF87
-!! yellow 221
-!*.color3: #ffd75f
-!*.color11: #ffd75f
-!! blue 110
-!*.color4: #87afd7
-!*.color12: #87afd7
-!! magenta 146
-!*.color5: #afafd7
-!*.color13: #afafd7
-!! cyan 75
-!*.color6: #afd7ff
-!*.color14: #afd7ff
-!! white 239 15
-!*.color7: #e4e4e4
-!*.color15: #ffffff
-
-*.background: #011627
-*.foreground: #acb4c2
-*.cursorColor: #9ca1aa
-*.color0: #1d3b53
-*.color1: #fc514e
-*.color2: #a1cd5e
-*.color3: #e3d18a
-*.color4: #82aaff
-*.color5: #c792ea
-*.color6: #7fdbca
-*.color7: #a1aab8
-*.color8: #7c8f8f
-*.color9: #ff5874
-*.color10: #21c7a8
-*.color11: #ecc48d
-*.color12: #82aaff
-*.color13: #ae81ff
-*.color14: #7fdbca
-*.color15: #d6deeb
-
-URxvt*font: xft:Inconsolata Nerd Font Mono:style=Medium:size=18:pixelsize=20:antialias=true
-!URxvt*font: xft:MesloLGS NF:size=11
-URxvt*borderLess: false
-URxvt*externalBorder: 0
-URxvt*internalBorder: 4
+URxvt*depth: 32
+URxvt.font:xft:monospace:size=11
+URxvt*title: urxvt
+URxvt*urgentOnBell: true
+URxvt*visualBell: false
 URxvt*scrollBar: false
-URxvt*saveLines: 5000
-  
-URxvt*perl-ext-common: default,tabbedex
-URxvt*keysym.Control-Shift-N: perl:tabbedex:new_tab
-URxvt*keysym.Control-Shift-K: perl:tabbedex:next_tab
-URxvt*keysym.Control-Shift-J: perl:tabbedex:prev_tab
-URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
-URxvt.keysym.Control-Shift-H: perl:tabbedex:move_tab_left
-URxvt.keysym.Control-Shift-L: perl:tabbedex:move_tab_right
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer:	false
+URxvt*scrollTtyKeypress: true
+URxvt*cursorUnderline: true
+URxvt*pointerBlank: true
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: /usr/bin/firefox
+URxvt.matcher.button: 1
 
-URxvt*tabbedex.tabbar-fg: 15
-URxvt*tabbedex.tabbar-bg: 236
-URxvt*tabbedex.tab-fg: 110
-URxvt*tabbedex.tab-bg: 236
-URxvt*tabbedex.transparent: true
-URxvt*tabbedex.new-button: false
+!xterm
+XTerm*colorMode:	on
+XTerm*faceName:  monospace
+XTerm*faceSize: 11
+XTerm*visualBell:	true
 
 
 !xcalc
@@ -117,4 +64,57 @@ XCalc*ti*button34*background: #444484
 XCalc*ti*button37*background: #555595
 XCalc*ti*button38*background: #555595
 XCalc*ti*button39*background: #555595
+
+!Xclock
+xclock*update: 1
+xclock*analog: true
+xclock*Foreground: gray
+xclock*background: black
+
+
+
+! Dracula Xresources palette
+!! COLORS
+
+! special
+URxvt*foreground:   #bbc5ff
+URxvt*background:   [100]#292d3e
+URxvt*cursorColor:  #bbc5ff
+
+XTerm*foreground: #bbc5ff
+XTerm*background: #292d3e
+XTerm*cursorColor: #bbc5ff
+
+! black
+*.color0:       #292d3e
+*.color8:       #434758
+
+! red
+*.color1:       #f07178
+*.color9:       #ff8b92
+
+! green
+*.color2:       #c3e88d
+*.color10:      #ddffa7
+
+! yellow
+*.color3:       #ffcb6b
+*.color11:      #ffe585
+
+! blue
+*.color4:       #82aaff
+*.color12:      #9cc4ff
+
+! magenta
+*.color5:       #c792ea
+*.color13:      #e1acff
+
+! cyan
+*.color6:       #89ddff
+*.color14:      #a3f7ff
+
+! white
+*.color7:       #d0d0d0
+*.color15:      #ffffff
+
 
