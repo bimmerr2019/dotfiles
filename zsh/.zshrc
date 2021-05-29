@@ -85,6 +85,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $HOME/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
 
+source $DOTFILES/zsh/zsh-z/zsh-z.plugin.zsh
+
 #eval "$(dircolors $HOME/.dircolors)";
 
 # To customize prompt, run `p10k configure` or edit 

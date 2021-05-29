@@ -29,8 +29,16 @@
 !*.color7: #e4e4e4
 !*.color15: #ffffff
 
-*.background: #011627
+! Transparency
+! True
+!URxvt.depth: 32
+!*.background: [080]#011627
+
+urxvt*transparent:true
+urxvt*shading: 30
+
 *.foreground: #acb4c2
+*.background: #011627
 *.cursorColor: #9ca1aa
 *.color0: #1d3b53
 *.color1: #fc514e
@@ -118,3 +126,9 @@ XCalc*ti*button37*background: #555595
 XCalc*ti*button38*background: #555595
 XCalc*ti*button39*background: #555595
 
+! add on the fly resizing
+urxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
+URxvt.keysym.Control-Shift-M:     resize-font:smaller
+URxvt.keysym.Control-Shift-P:      resize-font:bigger
+URxvt.keysym.Control-Shift-E:      resize-font:reset
+URxvt.resize-font.step: 1

@@ -4,14 +4,22 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'moll/vim-bbye'
     Plug 'simeji/winresizer'
     Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/limelight.vim'
+    Plug 'itchyny/lightline.vim'
     Plug 'simnalamburt/vim-mundo'
     Plug 'rust-lang/rust.vim'
     Plug 'bluz71/vim-nightfly-guicolors'
+    Plug 'ap/vim-css-color' "Displays a preview of colors with CSS
 call plug#end()
 
 set clipboard+=unnamedplus
 set splitbelow splitright
 set number relativenumber nowrap
+set spell spelllang=en_us
+
+" set background=dark
+
+au ColorScheme * hi Normal ctermbg=none guibg=none
 
 " added for rust plugin
 syntax enable
@@ -85,6 +93,8 @@ augroup END
 
 " Config for fzf.vim (BONUS :D)
 nnoremap <leader>f :Files<cr>
+nnoremap <leader>h :History<cr>
+nnoremap <leader><space> :Rg<cr>
 
 " added for mutt and text_flowed
 setl tw=72
@@ -105,4 +115,3 @@ colorscheme nightfly
 let g:lightline = { 'colorscheme' : 'nightfly'}
 let g:nightflyCursorColor = 1
 let g:nightflyUnderlineMatchParen = 1
-
