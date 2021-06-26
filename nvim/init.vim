@@ -1,6 +1,7 @@
 " Plugins
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'chrisbra/csv.vim'
+    Plug 'christoomey/vim-tmux-navigator'
     Plug 'moll/vim-bbye'
     Plug 'simeji/winresizer'
     Plug 'junegunn/fzf.vim'

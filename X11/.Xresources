@@ -29,8 +29,8 @@ URxvt*scrollBar: false
 URxvt*saveLines: 5000
   
 URxvt*perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
-URxvt.resize-font.smaller: C-j
-URxvt.resize-font.bigger: C-k
+URxvt.resize-font.smaller: C-J
+URxvt.resize-font.bigger: C-K
 URxvt.resize-font.step: 1
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
