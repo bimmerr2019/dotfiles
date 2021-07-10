@@ -1,7 +1,7 @@
 xrdb -merge $HOME/.config/X11/.Xresources
 urxvtd -o -q -f
 xinput set-prop "SynPS/2 Synaptics TouchPad" "306" "1"
-xinput set-prop "SynPS/2 Synaptics TouchPad" "326" "1"
+xinput set-prop "SynPS/2 Synaptics TouchPad" "328" "1"
 amixer sset Master unmute
 amixer sset Speaker unmute
 amixer sset Headphone unmute
