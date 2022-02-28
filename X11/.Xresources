@@ -1,5 +1,5 @@
 URxvt*transparent:true
-URxvt*shading: 30
+URxvt*shading: 20
 
 *.foreground: #acb4c2
 *.background: #011627
@@ -22,6 +22,7 @@ URxvt*shading: 30
 *.color15: #d6deeb
 
 URxvt*font: xft:Inconsolata Nerd Font Mono:style=Medium:size=18:pixelsize=20:antialias=true
+!URxvt*font: xft:MesloLGS NF:style=Medium:size=11
 URxvt*borderLess: false
 URxvt*externalBorder: 0
 URxvt*internalBorder: 4

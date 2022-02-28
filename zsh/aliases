@@ -24,6 +24,7 @@ ex ()
   fi
 }
 
+alias b="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias cat="bat"
 alias ll='lsd -lah'
 alias l='lsd -lFh'     #size,show type,human readable
@@ -34,7 +35,7 @@ alias lt='lsd -ltFh'   #long list,sorted by date,show type,human readable
 alias ldot='lsd -ld .*'
 alias lS='lsd -1FSsh'
 alias lart='lsd -1Fcart'
-alias lrt='lsd -1Fcrt'
+alias lrt='lsd -1Frt'
 alias vids='lsd -ltFh *.{mkv,mp4,webm}'
 
 alias grep='grep --color'
@@ -71,6 +72,7 @@ alias cfa='nvim $HOME/dotfiles/zsh/aliases'
 alias cfm='nvim $HOME/dotfiles/mutt/muttrc_local'
 alias cfc='nvim $HOME/dotfiles/i3/config'
 alias cfx='nvim $HOME/dotfiles/X11/.Xresources'
+alias cfdotx='nvim $HOME/dotfiles/X11/.xinitrc'
 alias cfp='nvim $HOME/ArchInstall/apps.csv'
 alias cfn='nvim $HOME/.newsboat/urls'
 alias play='mono $HOME/Downloads/StarTrek/StarTrek/Program.exe'
@@ -78,7 +80,7 @@ alias play='mono $HOME/Downloads/StarTrek/StarTrek/Program.exe'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
-alias mpdf='zathura $HOME/building_mouseless_environment.pdf &'
+alias mpdf='zathura $HOME/mouseless/building_mouseless_environment.pdf &'
 alias xup='xrdb $HOME/dotfiles/X11/.Xresources'
 alias pman='sudo pacman'
 alias pun='sudo pacman -Rns'
@@ -99,6 +101,9 @@ alias sparrow='cd $HOME/sparrow; ./sparrow'
 alias whirl='cd $HOME/Downloads/whirlpool-gui; yarn start'
 alias wasabi='cd $HOME/WalletWasabi/WalletWasabi.Gui; dotnet run'
 alias lv="nvim -c':e#<1'"
+alias wea="curl v2.wttr.in/Phoenix\?u"
+alias weat="curl v2.wttr.in/Tucson\?u"
+alias weal="curl v2.wttr.in/Las+Vegas\?u"
 alias yt='youtube-dl --add-metadata -i'
 alias yta='yt -x -f bestaudio/best'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index

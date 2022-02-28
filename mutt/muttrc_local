@@ -5,8 +5,8 @@ set editor = "nvim -c 'normal O' -c 'normal O' -c 'startinsert'"
 set date_format="%m/%d/%y %I:%M%p"
 set confirmappend = no
 set delete = yes
-#set signature=~/.config/mutt/signature.txt
-set signature = "python ~/Signature/Signature.py|"
+set signature=~/dotfiles/mutt/sig.txt
+#set signature = "python ~/Signature/Signature.py|"
 set text_flowed = yes
 
 macro index,pager A ";<save-message>=2021\n" "move to Archive"
