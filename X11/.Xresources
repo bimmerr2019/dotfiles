@@ -1,5 +1,5 @@
 URxvt*transparent:true
-URxvt*shading: 20
+URxvt*shading: 30
 
 *.foreground: #acb4c2
 *.background: #011627
@@ -8,7 +8,9 @@ URxvt*shading: 20
 *.color1: #fc514e
 *.color2: #a1cd5e
 *.color3: #e3d18a
-*.color4: #82aaff
+!*.color4: #82aaff
+!*.color4: #011627
+*.color4: #7fdbca
 *.color5: #c792ea
 *.color6: #7fdbca
 *.color7: #a1aab8
@@ -21,7 +23,7 @@ URxvt*shading: 20
 *.color14: #7fdbca
 *.color15: #d6deeb
 
-URxvt*font: xft:Inconsolata Nerd Font Mono:style=Medium:size=18:pixelsize=20:antialias=true
+URxvt*font: xft:Inconsolata Nerd Font Mono:style=Medium:size=20:pixelsize=22:antialias=true
 !URxvt*font: xft:MesloLGS NF:style=Medium:size=11
 URxvt*borderLess: false
 URxvt*externalBorder: 0
