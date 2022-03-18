@@ -99,6 +99,7 @@ alias pop=cd ..
 alias d='dirs -v'
 alias sparrow='cd $HOME/sparrow; ./sparrow'
 alias whirl='cd $HOME/Downloads/whirlpool-gui; yarn start'
+alias yubi='cd $HOME/Downloads/yubikey; ./yubioath-desktop-5.1.0-linux.AppImage &; cd $HOME'
 alias wasabi='cd $HOME/WalletWasabi/WalletWasabi.Gui; dotnet run'
 alias lv="nvim -c':e#<1'"
 alias wea="curl v2.wttr.in/Phoenix\?u"
