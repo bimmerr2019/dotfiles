@@ -121,8 +121,8 @@ set $ws3 "3:msg"
 set $ws4 "4:pdf"
 set $ws5 "5:vm"
 set $ws6 "6:key"
-set $ws7 "7"
-set $ws8 "8"
+set $ws7 "7:todo"
+set $ws8 "8:wh"
 set $ws9 "9"
 set $ws10 "10"
 
@@ -159,12 +159,15 @@ bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
 
 workspace_auto_back_and_forth yes
 
+# xprop | grep WM_CLASS
 assign [class="firefox" instance="Navigator"] $ws2
 assign [class="Yubico Authenticator" instance="yubioath-desktop"] $ws2
 assign [class="KeePassXC" instance="keepassxc"] $ws6
 assign [class="Element" instance="element"] $ws3
 assign [class="Signal" instance="signal"] $ws3
 assign [class="Zathura" instance="org.pwmt.zathura"] $ws4
+assign [class="QTodoTxt2" instance="qtodotxt.pyw"] $ws7
+assign [class="whirlpool-gui" instance="whirlpool-gui"] $ws8
 
 focus_follows_mouse no
 
@@ -264,12 +267,12 @@ exec urxvt
 exec firefox
 exec signal-desktop
 exec element-desktop
-exec zathura ~/Nextcloud/building_mouseless_environment.pdf
+exec zathura ~/Nextcloud/mouseless/building_mouseless_environment.pdf
 exec nextcloud
 
 bar {
 	status_command /usr/bin/bumblebee-status \
-        -m battery pasink pasource nic disk memory datetime \
+        -m disk memory nic pasink pasource battery datetime \
 		-p disk.path=/home datetime.format="%a, %b %d, %Y at %I:%M %p" \
         -t gruvbox-powerline-light \
 #		-t solarized-powerline

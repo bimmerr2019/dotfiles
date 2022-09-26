@@ -9,7 +9,7 @@ set signature=~/dotfiles/mutt/sig.txt
 #set signature = "python ~/Signature/Signature.py|"
 set text_flowed = yes
 
-macro index,pager A ";<save-message>=2021\n" "move to Archive"
+macro index,pager A ";<save-message>=2022\n" "move to Archive"
 macro index,pager d ";<save-message>=Trash<enter>" "move to Trash"
 # Reply to all recipients
 bind index,pager G group-reply
