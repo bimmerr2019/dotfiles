@@ -109,7 +109,7 @@ highlight DiffAdd    cterm=BOLD ctermfg=NONE ctermbg=22
 highlight DiffDelete cterm=BOLD ctermfg=NONE ctermbg=52
 highlight DiffChange cterm=BOLD ctermfg=NONE ctermbg=23
 highlight DiffText   cterm=BOLD ctermfg=NONE ctermbg=23
-"highlight IncSearch  cterm=BOLD ctermfg=NONE ctermbg=23
+highlight IncSearch  cterm=BOLD ctermfg=NONE ctermbg=23
 
 set termguicolors | "Use the right colors
 colorscheme nightfly

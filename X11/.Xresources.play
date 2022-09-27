@@ -3,7 +3,7 @@ URxvt*shading: 30
 
 *.foreground: #C6C6C6
 *.background: #1C1C1C
-*.cursorColor: #ffd75f
+*.cursorColor: #444444
 
 ! black 236 238
 *.color0: #303030

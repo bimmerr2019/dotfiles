@@ -23,3 +23,4 @@ export VIMRC="$HOME/dotfiles/nvim/init.vim"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+export NEWT_COLORS=' window=white,white border=white,white checkbox=white,white actcheckbox=white,white' nmtui
