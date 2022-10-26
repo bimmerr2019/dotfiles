@@ -11,6 +11,7 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'rust-lang/rust.vim'
     Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'ap/vim-css-color' "Displays a preview of colors with CSS
+    Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
 set clipboard+=unnamedplus
