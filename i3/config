@@ -86,13 +86,6 @@ bindsym $mod+CTRL+h split h
 # split in vertical orientation
 bindsym $mod+CTRL+v split v
 
-#change gaps
-bindsym $mod+r gaps inner current plus 5
-bindsym $mod+Shift+r gaps inner current minus 5
-
-bindsym $mod+z gaps outer current plus 5
-bindsym $mod+Shift+z gaps outer current minus 5
-
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -176,9 +169,9 @@ set $i3lockwall sh ~/.config/i3/scripts/lock.sh
 bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
 
 # reload the configuration file
-bindsym $mod+Shift+c restart
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-#bindsym $mod+Shift+r reload
+bindsym $mod+Shift+r restart
 
 # shutdown / restart / suspend...
 
@@ -207,6 +200,33 @@ for_window [window_role="task_dialog"] floating enable
 
 # Example of defining a floating window
 for_window [class="Arandr"] floating enable
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
 
 # special
 set_from_resource $foreground foreground #C6C6C6
@@ -247,6 +267,7 @@ set_from_resource $white1 color7 #4E4E4E
 set_from_resource $white2 color15 #ffffff
 
 ##########
+# DESIGN #
 ##########
 
 # hide borders
@@ -270,6 +291,20 @@ exec element-desktop
 exec zathura ~/Nextcloud/mouseless/building_mouseless_environment.pdf
 exec nextcloud
 
+# Terminal scratchpad with tmux and three windows: 1. Terminal | 2.Neovim temp file
+for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
+bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
+exec urxvtc -name urxvt_scratchpad \
+-e tmux -2 new-session -d -s scratchpad \; \
+new-window -n nvim 'nvim +e /tmp/nvim-tmp.md' \; \
+attach-session -d -t scratchpad
+
+# htop scratchpad
+for_window [instance="htop_scratchpad"] move to scratchpad, border none
+bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
+exec urxvtc -name htop_scratchpad -e htop
+
+# i3bar
 bar {
 	status_command /usr/bin/bumblebee-status \
         -m disk memory nic pasink pasource battery datetime \
@@ -293,4 +328,4 @@ bindsym $mod+x mode "$mode_display"
 exec --no-startup-id dunst
 
 # Remap Caps Lock key when external keyboard is plugged
-# bindsym $mod+z exec "setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape' &"
+bindsym $mod+z exec "setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape' &"

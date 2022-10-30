@@ -38,7 +38,13 @@ URxvt*internalBorder: 4
 URxvt*scrollBar: false
 URxvt*saveLines: 5000
   
-URxvt*perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
+URxvt*perl-ext-common: default,tabbedex,matcher,resize-font,url-select,keyboard-select
+URxvt.keysym.Control-Shift-N: perl:tabbedex:new_tab
+URxvt.keysym.Control-Shift-K: perl:tabbedex:next_tab
+URxvt.keysym.Control-Shift-J: perl:tabbedex:prev_tab
+URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
+URxvt.keysym.Control-Shift-H: perl:tabbedex:move_tab_left
+URxvt.keysym.Control-Shift-L: perl:tabbedex:move_tab_right
 URxvt.resize-font.smaller: C-J
 URxvt.resize-font.bigger: C-K
 URxvt.resize-font.step: 1
@@ -49,6 +55,13 @@ URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt*tabbedex.tabbar-fg: 15
+URxvt*tabbedex.tabbar-bg: 236
+URxvt*tabbedex.tab-fg: 110
+URxvt*tabbedex.tab-bg: 236
+URxvt*tabbedex.transparent: true
+URxvt*tabbedex.new-button: false
+
 
 !xcalc
 XCalc*geometry: 300x400

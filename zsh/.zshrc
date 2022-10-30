@@ -1,28 +1,5 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of 
-# ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+fpath=($ZDOTDIR/external $fpath)
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$HOME/bin:$PATH
-
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Enable colors and change prompt:
-# autoload -U colors && colors
-# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
 setopt AUTO_PARAM_SLASH
@@ -34,9 +11,7 @@ autoload -Uz compinit; compinit
 _comp_options+=(globdots)
 source ~/dotfiles/zsh/external/completion.zsh
 
-fpath=($ZDOTDIR/external $fpath)
-
-#autoload -Uz prompt_purification_setup; prompt_purification_setup
+autoload -Uz prompt_purification_setup; prompt_purification_setup
 
 # Push the current directory visited on to the stack.
 setopt AUTO_PUSHD
@@ -73,7 +48,7 @@ then
    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
 fi
 
-#ftmuxp
+ftmuxp
 
 # Clearing the shell is now done with CTRL+g
 bindkey -r '^l'
@@ -81,14 +56,11 @@ bindkey -r '^g'
 bindkey -s '^g' 'clear\n'
 
 # keep this line at bottom
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^ ' autosuggest-accept
+source $HOME/play/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/play/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=9'
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
 source $DOTFILES/zsh/zsh-z/zsh-z.plugin.zsh
 
 #eval "$(dircolors $HOME/.dircolors)";
-
-# To customize prompt, run `p10k configure` or edit 
-# ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

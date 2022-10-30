@@ -52,6 +52,13 @@ ln -sf "$DOTFILES/zsh/.zshrc" "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/aliases" "$XDG_CONFIG_HOME/zsh/aliases"
 rm -rf "$XDG_CONFIG_HOME/zsh/external"
 ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
+mkdir -p "$HOME/play"
+[ ! -d "$HOME/play/zsh-autosuggestions" ] \
+&& git clone https://github.com/zsh-users/zsh-autosuggestions \
+"$HOME/play"
+[ ! -d "$HOME/play/zsh-syntax-highlighting" ] \
+&& git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+"$HOME/play"
 
 #########
 # Fonts #
@@ -77,3 +84,5 @@ ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
 [ ! -d "$XDG_CONFIG_HOME/tmux/plugins" ] \
 && git clone https://github.com/tmux-plugins/tpm \
 "$XDG_CONFIG_HOME/tmux/plugins/tpm"
+
+ln -s "$DOTFILES/tmuxp" "$XDG_CONFIG_HOME"

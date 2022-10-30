@@ -1,28 +1,4 @@
-#
-# # ex - archive extractor
-# # usage: ex <file>
-ex ()
-{
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.tar.xz)    tar xJf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
+#!/usr/bin/env bash
 
 alias b="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias cat="bat"
@@ -65,15 +41,44 @@ alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
+alias vimdiff='nvim -d'
+alias cfs='nvim $HOME/dotfiles/zsh/scripts.sh'
+alias cfsa='nvim -c ":vert ba" $HOME/dotfiles/zsh/scripts.sh $HOME/dotfiles_book1/zsh/scripts.sh $HOME/dotfiles_book/zsh/scripts.zsh'
+alias cfsd='nvim -c ":vert ba" $HOME/dotfiles/zsh/scripts.sh $HOME/dotfiles_book/zsh/scripts.zsh'
+alias cfsd1='vimdiff $HOME/dotfiles/zsh/scripts.sh $HOME/dotfiles_book1/zsh/scripts.sh'
 alias cfz='nvim $HOME/dotfiles/zsh/.zshrc'
-alias cfe='nvim $HOME/.zshenv'
+alias cfza='nvim -c ":vert ba" $HOME/dotfiles/zsh/.zshrc $HOME/dotfiles_book1/zsh/.zshrc $HOME/dotfiles_book/zsh/zshrc'
+alias cfzd='nvim -c ":vert ba" $HOME/dotfiles/zsh/.zshrc $HOME/dotfiles_book/zsh/zshrc'
+alias cfzd1='vimdiff $HOME/dotfiles/zsh/.zshrc $HOME/dotfiles_book1/zsh/.zshrc'
+alias cfe='nvim $HOME/dotfiles/zsh/.zshenv'
+alias cfea='nvim -c ":vert ba" $HOME/dotfiles/zsh/.zshenv $HOME/dotfiles_book1/zsh/.zshenv $HOME/dotfiles_book/zsh/.zshenv'
+alias cfed='nvim -c ":vert ba" $HOME/dotfiles/zsh/.zshenv $HOME/dotfiles_book/zsh/.zshenv'
+alias cfed1='vimdiff $HOME/dotfiles/zsh/.zshenv $HOME/dotfiles_book1/zsh/.zshenv'
 alias cfv='nvim $HOME/dotfiles/nvim/init.vim'
+alias cfva='nvim -c ":vert ba" $HOME/dotfiles/nvim/init.vim $HOME/dotfiles_book1/nvim/init.vim $HOME/dotfiles_book/nvim/init.vim'
+alias cfvd='nvim -c ":vert ba"  $HOME/dotfiles/nvim/init.vim $HOME/dotfiles_book/nvim/init.vim'
+alias cfvd1='vimdiff $HOME/dotfiles/nvim/init.vim $HOME/dotfiles_book1/nvim/init.vim'
 alias cfa='nvim $HOME/dotfiles/zsh/aliases'
+alias cfaa='nvim -c ":vert ba" $HOME/dotfiles/zsh/aliases $HOME/dotfiles_book1/zsh/aliases $HOME/dotfiles_book/aliases/aliases'
+alias cfad='nvim -c ":vert ba" $HOME/dotfiles/zsh/aliases $HOME/dotfiles_book/aliases/aliases'
+alias cfad1='vimdiff $HOME/dotfiles/zsh/aliases $HOME/dotfiles_book1/zsh/aliases'
 alias cfm='nvim $HOME/dotfiles/mutt/muttrc_local'
 alias cfc='nvim $HOME/dotfiles/i3/config'
+alias cfca='nvim -c ":vert ba" $HOME/dotfiles/i3/config $HOME/dotfiles_book1/i3/config $HOME/dotfiles_book/i3/config'
+alias cfcd='nvim -c ":vert ba" $HOME/dotfiles/i3/config $HOME/dotfiles_book/i3/config'
+alias cfcd1='vimdiff $HOME/dotfiles/i3/config $HOME/dotfiles_book1/i3/config'
 alias cfx='nvim $HOME/dotfiles/X11/.Xresources'
-alias cfdotx='nvim $HOME/dotfiles/X11/.xinitrc'
+alias cfxa='nvim -c ":vert ba" $HOME/dotfiles/X11/.Xresources $HOME/dotfiles_book1/X11/.Xresources $HOME/dotfiles_book/X11/xresources'
+alias cfxd='nvim -c ":vert ba" $HOME/dotfiles/X11/.Xresources $HOME/dotfiles_book/X11/xresources'
+alias cfxd1='vimdiff $HOME/dotfiles/X11/.Xresources $HOME/dotfiles_book1/X11/.Xresources'
+alias cfd='nvim $HOME/dotfiles/X11/.xinitrc'
+alias cfda='nvim -c ":vert ba" $HOME/dotfiles/X11/.xinitrc $HOME/dotfiles_book1/X11/.xinitrc $HOME/dotfiles_book/X11/xinitrc'
+alias cfdd='nvim -c ":vert ba" $HOME/dotfiles/X11/.xinitrc $HOME/dotfiles_book/X11/xinitrc'
+alias cfdd1='vimdiff $HOME/dotfiles/X11/.xinitrc $HOME/dotfiles_book1/X11/.xinitrc'
 alias cfp='nvim $HOME/ArchInstall/apps.csv'
+alias cfpa='nvim -c ":vert ba" $HOME/ArchInstall/apps.csv $HOME/ArchInstall_book1/apps.csv $HOME/ArchInstall_book/apps.csv'
+alias cfpd='nvim -c ":vert ba" $HOME/ArchInstall/apps.csv $HOME/ArchInstall_book/apps.csv'
+alias cfpd1='vimdiff $HOME/ArchInstall/apps.csv $HOME/ArchInstall_book1/apps.csv'
 alias cfu='nvim $HOME/.newsboat/urls'
 alias play='mono $HOME/Downloads/StarTrek/StarTrek/Program.exe'
 #alias lf='ranger'
