@@ -60,6 +60,7 @@ source $HOME/play/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/play/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=9'
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+bindkey '\e' autosuggest-accept
 
 source $DOTFILES/zsh/zsh-z/zsh-z.plugin.zsh
 
