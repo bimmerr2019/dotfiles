@@ -93,10 +93,16 @@ augroup filetype_csv
     autocmd BufWritePre *.csv :%UnArrangeColumn
 augroup END
 
+" restore the position of the last cursor when you open a file
+"autocmd vimrc BufReadPost * call general#RestorePosition()
+
 " Config for fzf.vim (BONUS :D)
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>h :History<cr>
 nnoremap <leader><space> :Rg<cr>
+
+" un-highlight when esc is pressed
+nnoremap <silent> <c-c> <Cmd>nohlsearch<cr>
 
 " added for mutt and text_flowed
 setl tw=72

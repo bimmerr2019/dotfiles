@@ -56,12 +56,12 @@ bindkey -r '^g'
 bindkey -s '^g' 'clear\n'
 
 # keep this line at bottom
-source $HOME/play/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/play/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/zsh_play/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/zsh_play/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=9'
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
-bindkey '\e' autosuggest-accept
+#bindkey '\e' autosuggest-accept
 
-source $DOTFILES/zsh/zsh-z/zsh-z.plugin.zsh
+source $HOME/zsh_play/zsh-z/zsh-z.plugin.zsh
 
 #eval "$(dircolors $HOME/.dircolors)";
