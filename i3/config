@@ -168,6 +168,12 @@ focus_follows_mouse no
 set $i3lockwall sh ~/.config/i3/scripts/lock.sh
 bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
 
+set $luke_cp sh ~/.config/i3/scripts/luke_cp.sh
+bindcode $mod+118 exec --no-startup-id $luke_cp
+
+set $luke_paste sh ~/.config/i3/scripts/luke_paste.sh
+bindsym $mod+Shift+b exec --no-startup-id $luke_paste
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
