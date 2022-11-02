@@ -52,9 +52,8 @@ ln -sf "$DOTFILES/zsh/.zshrc" "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/aliases" "$XDG_CONFIG_HOME/zsh/aliases"
 rm -rf "$XDG_CONFIG_HOME/zsh/external"
 ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
-mkdir -p "$HOME/zsh_play/zsh-autosuggestions"
-mkdir -p "$HOME/zsh_play/zsh-syntax-highlighting"
-mkdir -p "$HOME/zsh_play/zsh-z"
+
+mkdir -p "$HOME/zsh_play"
 [ ! -d "$HOME/zsh_play/zsh-autosuggestions" ] \
 && git clone https://github.com/zsh-users/zsh-autosuggestions \
 "$HOME/zsh_play/zsh-autosuggestions"
